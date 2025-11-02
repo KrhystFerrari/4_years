@@ -6,12 +6,31 @@
   box-sizing: border-box;
 }
 
+*,
+*::before,
+*::after {
+  max-width: 100vw;
+}
+
+#root {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
 body {
   background: linear-gradient(135deg, #1a0b2e 0%, #16213e 25%, #0f3460 50%, #16213e 75%, #1a0b2e 100%);
   min-height: 100vh;
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
   position: relative;
+  width: 100%;
+  max-width: 100vw;
 }
 
 body::before {
@@ -48,6 +67,9 @@ body::before {
   padding: 2rem 1rem;
   position: relative;
   z-index: 10;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .floating-hearts {
@@ -96,12 +118,14 @@ body::before {
 
 .title {
   font-family: 'Great Vibes', cursive;
-  font-size: 6rem;
+  font-size: clamp(3rem, 8vw, 6rem);
   color: #fdf2f8;
   margin-bottom: 0.5rem;
   font-weight: 400;
-  text-shadow: 3px 3px 12px rgba(244, 63, 94, 0.6), 0 0 20px rgba(236, 72, 153, 0.4);
-  letter-spacing: 2px;
+  text-shadow: 3px 3px 12px rgba(244, 63, 94, 0.8), 0 0 25px rgba(236, 72, 153, 0.6);
+  letter-spacing: 3px;
+  text-align: center;
+  word-break: keep-all;
 }
 
 .subtitle {
@@ -120,6 +144,8 @@ body::before {
   margin-bottom: 4rem;
   flex-wrap: wrap;
   justify-content: center;
+  width: 100%;
+  max-width: 100%;
 }
 
 .name-card {
@@ -156,9 +182,10 @@ body::before {
 }
 
 .declaration-container {
-  max-width: 800px;
+  max-width: min(800px, 95vw);
   margin: 0 auto 3rem auto;
   text-align: center;
+  width: 100%;
 }
 
 .declaration-card {
@@ -229,8 +256,8 @@ body::before {
 }
 
 .photo-image {
-  width: 300px;
-  height: 300px;
+  width: min(300px, 80vw);
+  height: min(300px, 80vw);
   object-fit: cover;
   display: block;
   border-radius: 1.5rem;
@@ -325,6 +352,9 @@ body::before {
   padding: 2rem 1rem;
   position: relative;
   z-index: 10;
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .landing-header {
@@ -340,12 +370,14 @@ body::before {
 
 .landing-title {
   font-family: 'Great Vibes', cursive;
-  font-size: 5rem;
+  font-size: clamp(2.5rem, 7vw, 5rem);
   color: #fdf2f8;
   margin-bottom: 1rem;
   font-weight: 400;
   text-shadow: 3px 3px 12px rgba(244, 63, 94, 0.8), 0 0 25px rgba(236, 72, 153, 0.6);
   letter-spacing: 3px;
+  text-align: center;
+  word-break: keep-all;
 }
 
 .landing-subtitle {
@@ -359,8 +391,9 @@ body::before {
 }
 
 .landing-message {
-  max-width: 600px;
+  max-width: min(600px, 90vw);
   margin-bottom: 4rem;
+  width: 100%;
 }
 
 .message-card {
@@ -436,8 +469,8 @@ body::before {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 500px;
-  height: 500px;
+  width: min(500px, 85vw);
+  height: min(500px, 85vw);
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
@@ -557,8 +590,8 @@ body::before {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 400px;
-  height: 400px;
+  width: min(400px, 90vw);
+  height: min(400px, 90vw);
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
